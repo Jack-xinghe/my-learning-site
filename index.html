@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>狐狐弹弓</title>
+    <meta name="description" content="初代弹弓物理小游戏：拉开小狐狸，打掉偷坚果的浣熊。提供简单与中等两关。" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="stage" id="stage">
+        <canvas id="game" width="1600" height="900" aria-label="狐狐弹弓游戏画面"></canvas>
+
+        <header class="hud" id="hud" hidden>
+          <div class="hud-left">
+            <p class="hud-level" id="hudLevel">林边小仓</p>
+            <p class="hud-ammo" id="hudAmmo">狐狸 × 4</p>
+          </div>
+          <p class="hud-score" id="hudScore">0</p>
+          <div class="hud-actions">
+            <button type="button" class="ghost" id="btnRestart">重来</button>
+            <button type="button" class="ghost" id="btnMenu">菜单</button>
+          </div>
+        </header>
+
+        <section class="panel menu" id="menu">
+          <p class="eyebrow">林间物理弹弓</p>
+          <h1>狐狐弹弓</h1>
+          <p class="lead">
+            拉开弹弓，把小狐狸弹出去，打掉藏在木石城堡里偷坚果的浣熊。
+            玩法照着最初代弹弓关卡来：一条弹弓、一种狐狸、木头 / 冰块 / 石块，简单和中等两关。
+          </p>
+          <div class="level-pick">
+            <button type="button" class="level-card easy" data-level="easy">
+              <span class="tag">简单</span>
+              <strong>林边小仓</strong>
+              <small>4 只狐狸 · 3 只浣熊 · 矮木屋</small>
+            </button>
+            <button type="button" class="level-card medium" data-level="medium">
+              <span class="tag">中等</span>
+              <strong>双塔仓库</strong>
+              <small>3 只狐狸 · 5 只浣熊 · 木石冰混搭</small>
+            </button>
+          </div>
+          <ol class="howto">
+            <li>按住弹弓上的狐狸向后拉</li>
+            <li>松开即发射，点线是预瞄弧线</li>
+            <li>撞垮积木，让浣熊被砸中或摔下去</li>
+          </ol>
+        </section>
+
+        <section class="panel result" id="result" hidden>
+          <p class="eyebrow" id="resultEyebrow">过关</p>
+          <h2 id="resultTitle">坚果保住了</h2>
+          <p class="stars" id="resultStars" aria-label="星级"></p>
+          <p class="result-score" id="resultScore">0 分</p>
+          <p class="result-note" id="resultNote"></p>
+          <div class="result-actions">
+            <button type="button" class="primary" id="btnAgain">再来一次</button>
+            <button type="button" class="secondary" id="btnNext">下一关</button>
+            <button type="button" class="ghost" id="btnBack">回菜单</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="vendor/matter.min.js?v=6"></script>
+    <script src="js/audio.js?v=6"></script>
+    <script src="js/ballistics.js?v=6"></script>
+    <script src="js/draw.js?v=6"></script>
+    <script src="js/levels.js?v=6"></script>
+    <script src="js/game.js?v=6"></script>
+  </body>
+</html>
