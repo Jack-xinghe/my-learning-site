@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>网页图片收集</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>网页图片收集</h1>
+      <p id="status">正在读取页面…</p>
+    </header>
+    <div class="actions">
+      <button type="button" id="select-all">全选</button>
+      <button type="button" id="clear">取消全选</button>
+      <button type="button" id="download-selected" class="primary">下载选中</button>
+      <button type="button" id="download-all">下载全部</button>
+    </div>
+    <div class="row-tools">
+      <label class="toggle"><input type="checkbox" id="select-mode" /> 在页面上点选</label>
+      <button type="button" id="rescan" class="text">重新扫描</button>
+    </div>
+    <p id="sync">新图片出现时会自动加入列表，不用重新加载插件。</p>
+    <div id="list"></div>
+    <p id="message" aria-live="polite"></p>
+    <script src="popup.js"></script>
+  </body>
+</html>
